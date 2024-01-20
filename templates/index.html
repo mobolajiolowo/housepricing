@@ -3,14 +3,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webpage Design</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
 </head>
 <body>
     <div class="main">
-        <div class="navbar">
-            <div class="icon">
-                <h2 class="logo">HomePredict</h2>
-            </div>
+        <h2 class="logo">HomePredict</h2><br>
         <div class="login">
             <form action="{{url_for ('predict')}}"method="post">
                 <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
@@ -29,8 +26,7 @@
                 
                 <button type="submit" class="btn primary">Predict</button>
             </form>
-            <br>
-            <br>
+            {{prediction_text}}
         </div>
     </div>
 </body>

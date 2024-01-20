@@ -3,14 +3,14 @@ from flask import Flask, request, app, jsonify, url_for, render_template
 import numpy as np
 import pandas as pd
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static') 
 regmodel = pickle.load(open('regmodel.pkl', 'rb'))
 
 scalar = pickle.load(open('scaling.pkl',"rb"))
 
 @app.route("/")
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 @app.route("/predict_api", methods=["POST"])
 def predict_api():
@@ -27,7 +27,7 @@ def predict():
     data = [float(x) for x in request.form.values()]
     input_data = scalar.transform(np.array(data).reshape(1,-1))
     output = regmodel.predict(input_data)[0]
-    return render_template("home.html", prediction_text="The House Price Predicted is {}".format(output))
+    return render_template("index.html", prediction_text="The House Price Predicted is {}".format(output))
 
 
 if __name__ == "__main__":

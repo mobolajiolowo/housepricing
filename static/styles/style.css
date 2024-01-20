@@ -2,47 +2,44 @@
     margin: 0;
     padding: 0;
 }
-
-.main{
-    width: 100%;
+body{
     background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%), url(1.jpg);
     background-position: center;
     background-size: cover;
-    height: 100%;
+
 }
 
-.icon{
-    width: 200px;
-    float: left;
-    height: 70px;
-}
+
 
 .logo{
     color: #ff7200;
     font-size: 35px;
     font-family: Arial;
     padding-left: 20px;
-    padding-top: 10px;
-    float: left;
 
 }
 
 .btn{
-    width: 100%;
+    width: 80px;
     height: 40px;
     background: #ff7200;
     border: 2px solid #ff7200;
     margin-top: 13px;
     color: #fff;
     font-size: 15px;
-    border-bottom-left-radius: 5px;
-    border-top-right-radius: 5px;
 }
-
 .btn:focus{
     outline: none;
 }
 
 .srch:focus{
     outline: none;
+}
+
+.login{
+    padding-left: 20px;
+
+}
+form input{
+    margin-bottom: 10px;
 }
